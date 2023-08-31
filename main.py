@@ -4,20 +4,6 @@ from selenium.webdriver.common.by import By
 
 #открываем сайт авито
 browser= webdriver.Chrome()
-link="https://www.avito.ru/"
-browser.get(link)
-
-
-#search_field = browser.find_element(By.CSS_SELECTOR,"#app > div > div.styles-singlePageWrapper-eKDyt > div > div.index-header-kdkEW.index-stickyHeader-WbpLL > div > div.index-search-xHvcz > div.index-form-ENoC5 > div.index-suggest-zkzTd > div > div > div > label.input-layout-input-layout-_HVr_.input-layout-size-s-COZ10.input-layout-text-align-left-U2OZJ.width-width-12-_MkqF.suggest-input-X6pqt.js-react-suggest > input")
-#search_field.send_keys("Ноутбуки")
-
-#открываем раздел Электроника-техника apple
-button=browser.find_element(By.CSS_SELECTOR,"#app > div > div.styles-singlePageWrapper-eKDyt > div > div.index-center-_TsYY.index-center_withTitle-_S7ge.index-center_noMarginTop-xAh5X.index-centerWide-_7ZZ_ > div.index-outerPosition-VKXYP > div > div > a:nth-child(9)")
-button.click()
-bLaptops=browser.find_element(By.CSS_SELECTOR,"#app > div > div.styles-singlePageWrapper-eKDyt > div > div.index-center-_TsYY.index-center_withTitle-_S7ge.index-center_marginTop_1-ewXHO.index-centerWide-_7ZZ_ > div.index-inner-dqBR5 > div.index-content-_KxNP > div.index-root-b_qF9 > div.styles-module-root-RbY1_.styles-module-root_columns_12-fuk_8.styles-module-root_bottom-XgXHc.styles-module-margin-bottom_64-cVX9t > div:nth-child(2) > div > div > div:nth-child(1) > div > a")
-bLaptops.click()
-bheart=browser.find_element(By.CSS_SELECTOR,"#i3397889112 > div > div > div.iva-item-body-KLUuy > div.iva-item-favoritesStep-__W3E > div")
-bheart.click()
 
 
 #открываем объявление по ссылке
@@ -35,6 +21,29 @@ bheart.click()
 #открываем страницу Избранного
 bFavourites=browser.find_element(By.CSS_SELECTOR,"#app > div > div.styles-module-theme-JeQ0D > div > div > div.index-counters-m9aGk > a:nth-child(1) > div > svg > path")
 bFavourites.click()
+
+#убираем из избранного
+bheart=browser.find_element(By.XPATH,"/html/body/div[1]/div/div[4]/div/div/favorite-items-list/div/div/div[1]/div[2]/div[2]/div/div/div[2]/div[1]/div")
+bheart.click()
+
+#обновляем страницу
+bFavourites=browser.find_element(By.CSS_SELECTOR,"#app > div > div.styles-module-theme-JeQ0D > div > div > div.index-counters-m9aGk > a:nth-child(1) > div > svg > path")
+bFavourites.click()
+
+time.sleep(5)
+
+#search_field = browser.find_element(By.CSS_SELECTOR,"#app > div > div.styles-singlePageWrapper-eKDyt > div > div.index-header-kdkEW.index-stickyHeader-WbpLL > div > div.index-search-xHvcz > div.index-form-ENoC5 > div.index-suggest-zkzTd > div > div > div > label.input-layout-input-layout-_HVr_.input-layout-size-s-COZ10.input-layout-text-align-left-U2OZJ.width-width-12-_MkqF.suggest-input-X6pqt.js-react-suggest > input")
+#search_field.send_keys("Ноутбуки")
+
+link="https://www.avito.ru/"
+browser.get(link)
+#открываем раздел Электроника-техника apple
+button=browser.find_element(By.CSS_SELECTOR,"#app > div > div.styles-singlePageWrapper-eKDyt > div > div.index-center-_TsYY.index-center_withTitle-_S7ge.index-center_noMarginTop-xAh5X.index-centerWide-_7ZZ_ > div.index-outerPosition-VKXYP > div > div > a:nth-child(9)")
+button.click()
+bLaptops=browser.find_element(By.CSS_SELECTOR,"#app > div > div.styles-singlePageWrapper-eKDyt > div > div.index-center-_TsYY.index-center_withTitle-_S7ge.index-center_marginTop_1-ewXHO.index-centerWide-_7ZZ_ > div.index-inner-dqBR5 > div.index-content-_KxNP > div.index-root-b_qF9 > div.styles-module-root-RbY1_.styles-module-root_columns_12-fuk_8.styles-module-root_bottom-XgXHc.styles-module-margin-bottom_64-cVX9t > div:nth-child(2) > div > div > div:nth-child(1) > div > a")
+bLaptops.click()
+bheart=browser.find_element(By.CSS_SELECTOR,"#i3397889112 > div > div > div.iva-item-body-KLUuy > div.iva-item-favoritesStep-__W3E > div")
+bheart.click()
 
 
 time.sleep(100)
